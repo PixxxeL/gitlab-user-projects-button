@@ -11,14 +11,14 @@
 // @grant        none
 // ==/UserScript==
 
-const VERSION = '1.0.1'
+const VERSION = '1.0.2'
 const USER_PIC_SELECTOR = '.gl-new-dropdown-item-content[data-track-label=user_profile]'
 const TARGET_CONTAINER_SELECTOR = '.top-bar-container:last-child' //.top-bar-fixed - parent
 
 const init = () => {
     console.info(`Версия скрипта: ${VERSION}`)
     const domain = location.hostname.split('.')
-    if (!domain.includes('gitlab') || !domain.includes('gl')) {
+    if (!domain.includes('gitlab') && !domain.includes('gl')) {
         console.info('Скрипт выполняется только на доменах, `gitlab` или `gl`.')
         return
     }
